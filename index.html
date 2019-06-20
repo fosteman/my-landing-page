@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/themes/white-indigo.css">
+	<link rel="stylesheet/less" type="text/css" href="css/placeholders.less" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 	<script type="text/javascript">
 		// Single Page Apps for GitHub Pages
 		// https://github.com/rafrex/spa-github-pages
@@ -54,8 +56,11 @@
 			<a target="_blank" href="https://dev.to/fosteman"><i class="fab fa-dev"></i></a>
 			<a target="_blank" href="https://www.linkedin.com/in/timofei-shchepkin-024434127/"><i class="fab fa-linkedin"></i></a>
 		</div>
+
 		<hr class="horizonal-rule">
+
 		<div class="tagline">My Projects</div>
+
 		<div class="project icons-social">
 			<a target="_blank" href="https://fosteman.github.io/team-management/">
 				<p>Team Management Platform
@@ -67,7 +72,29 @@
 					<i class="far fa-file"></i>
 				</p>
 			</a>
+			<a target="_blank" href="https://github.com/fosteman/ReactWorks/tree/master/qod">
+				<p>Quote Generator
+					<i class="fas fa-quote-right"></i>
+				</p>
+			</a>
 		</div>
+
+		<hr class="horizonal-rule2">
+		<div class="tagline">Quote of The Moment!</div>
+		<div class="special icons-social" id="special">
+			<div class="placeholder-content"></div>
+			<!--Fetch a quote of the moment!-->
+			<script type="text/javascript">
+				fetch('https://api.myjson.com/bins/16hm25').then(res => {res.json().then(json => window.qod = json).finally(() => {
+					let q = window.qod[Math.floor(Math.random() * window.qod.length)];
+					let quoteText = q.quoteText;
+					let quoteAuthor = q.quoteAuthor;
+
+					document.getElementById('special').innerHTML = quoteText + ' - ' + '<em>' + quoteAuthor + '</em>';
+				})});
+			</script>
+		</div>
+
 	</main>
 </body>
 </html>

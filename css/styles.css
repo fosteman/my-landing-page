@@ -70,19 +70,25 @@ main > .tagline {
 	height: 2.65rem;
 }
 .horizonal-rule {
-	border-top: 2px solid darkslategrey;
+	border-top: 2px solid;
+	width: 70%;
+}
+.horizonal-rule2 {
+	border-top: 2px solid;
 	width: 70%;
 }
 
 .project {
 	border-left: 1px solid darkslategrey;
+	border-right: 1px solid darkslategrey;
 	padding-left: 4px;
-	width: fit-content;
 	align-self: center;
-	align-items: end;
+	align-content: end;
+	width: 70%;
 }
 
 a {
-
 	text-decoration: none;
+}
+.special {
 }
