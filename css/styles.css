@@ -69,13 +69,13 @@ main > .tagline {
 	width: 2.65rem;
 	height: 2.65rem;
 }
-.horizonal-rule {
+.horizontal-rule {
 	border-top: 2px solid;
 	width: 70%;
 }
-.horizonal-rule2 {
+.horizontal-rule-2 {
 	border-top: 2px solid;
-	width: 70%;
+	width: 30%;
 }
 
 .project {
@@ -91,4 +91,8 @@ a {
 	text-decoration: none;
 }
 .special {
+	margin-bottom: 5%;
+}
+.footer {
+	font-size: 75%;
 }
