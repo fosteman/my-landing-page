@@ -1,10 +1,12 @@
-fetch('https://graphql-api-backend.herokuapp.com/api', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-    },
-    body: JSON.stringify({ query: `
+const getQuote = function() {
+    fetch('https://graphql-api-backend.herokuapp.com/api', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+            query: `
                 query {
                     randomQuote {
                         id
@@ -12,11 +14,17 @@ fetch('https://graphql-api-backend.herokuapp.com/api', {
                         author
                     }
                 }
-            `})
-})
-    .then(res => res.json())
-    .then(({data}) => data.randomQuote[0])
-    .then(q => document.getElementById('quote').innerHTML = q.text + ' - ' + '<em>' + q.author + '</em>');
+            `
+        })
+    })
+        .then(res => res.json())
+        .then(({data}) => data.randomQuote[0])
+        .then(q => document.getElementById('quote').innerHTML = q.text + ' - ' + '<em>' + q.author + '</em>');
+};
+
+setTimeout(function() {
+    getQuote();
+}, 2000);
 
 /*const { createApolloFetch } = require('./appolo-fetch.min');
 
