@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "less": "^3.9.0"
+  },
+  "dependencies": {
+    "@timfosteman/quote-generator": "^1.0.3"
+  }
+}
